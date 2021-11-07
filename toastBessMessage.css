@@ -1,0 +1,57 @@
+:root {
+	--msg-font-size: 1.7em;
+	--distance-between-messages: 0.25em;
+	--padding: 1em 1.2em;
+	--radius: 0.5em;
+	--color-border-width: 5px;
+}
+
+.Message {
+	margin-top: var(--distance-between-messages);
+	display: flex;
+	padding: var(--padding);
+	background-color: rgb(248, 249, 250);
+	border: solid 1px black;
+	top: 0;
+	font-size: var(--msg-font-size);
+}
+
+.Message[msgType='inf'][lr='l'] {
+	border-left-color: rgb(0, 123, 225);
+	border-left-width: var(--color-border-width);
+	border-radius: 0 var(--radius) var(--radius) 0;
+}
+.Message[msgType='dang'][lr='l'] {
+	border-left-color: rgb(220, 53, 69);
+	border-left-width: var(--color-border-width);
+	border-radius: 0 var(--radius) var(--radius) 0;
+}
+.Message[msgType='done'][lr='l'] {
+	border-left-color: rgb(40, 167, 69);
+	border-left-width: var(--color-border-width);
+	border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.Message[msgType='inf'][lr='r'] {
+	border-right-color: rgb(0, 123, 225);
+	border-right-width: var(--color-border-width);
+	border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.Message[msgType='dang'][lr='r'] {
+	border-right-color: rgb(220, 53, 69);
+	border-right-width: var(--color-border-width);
+	border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.Message[msgType='done'][lr='r'] {
+	border-right-color: rgb(40, 167, 69);
+	border-right-width: var(--color-border-width);
+	border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.Message[lr='l'] .x {
+	color: red;
+	margin-right: 0;
+	margin-left: 1em;
+}
